@@ -5,6 +5,8 @@ import invitation from '../models/Invitation';
 import host from "../utils/host";
 import style from './Invitation.module.scss';
 
+const http = axios.create({ baseURL: host});
+
 export default function Invitation(){
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -14,15 +16,25 @@ export default function Invitation(){
   useEffect(()=>{
 
     const loadData = async () => {
-      const http = axios.create({ baseURL: host+`/invitation/`});
-      await http.get<invitation>(`/${id}`).then((res)=>{
+      await http.get<invitation>(`/invitation/${id}`).then((res)=>{
         setInvitation(res.data);
         setLoading(false);
-      })
+      });
     }
-
     loadData();
   },[id]);
+
+  useEffect(()=>{
+    const visited = async () => {
+      await http.patch<invitation>(`/invitation/${id}/visit`);
+    }
+    if (invitation && !invitation.FirstVisitTime) {
+      visited();
+      console.log('visited');
+    }
+  }, [id, invitation]);
+    
+
 
   return (
     <div>
