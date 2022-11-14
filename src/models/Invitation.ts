@@ -2,6 +2,7 @@ export default interface invitation {
   SubmitTime: Date, 
   IdTenderInvitation: number, 
   SendTime: Date, 
+  FirstVisitTime: Date,
   IdTender: number,
   IdCustomerInfo: number,
   tender: tender,
