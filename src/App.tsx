@@ -1,11 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Invitation from './components/Invitation';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Typescript</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/:id" element={<Invitation />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
