@@ -1,0 +1,53 @@
+.offer {
+  background-image: linear-gradient(to bottom, #31046d, #2c083b);
+  padding: 0 15px 25px 15px;
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  min-width: 370px;
+  flex-basis: 40%;
+
+  h3 {
+    border-bottom: solid 1px silver;
+    padding-bottom: 15px;
+  }
+
+  > div {
+    display: grid;
+    width: 100%;
+
+    > label {
+      text-align: left;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    > input {
+      height: 30px;
+      font-size: 18px;
+      text-align: right;
+      padding: 0 10px;
+      outline: none;
+      border: solid 1px #31046d;
+      width: 100%;
+      min-width: 100px;
+      box-sizing: border-box;
+    }
+  }
+
+  .span1 {
+    input {
+      grid-column: 2/3;
+    }
+    grid-template-columns: 5fr 8fr 2fr;
+  }
+
+  .span2 {
+    grid-template-columns: 5fr 3fr 2fr 3fr 2fr;
+  }
+}
