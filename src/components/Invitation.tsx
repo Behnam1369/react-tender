@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import invitation from '../models/Invitation';
 import host from "../utils/host";
 import style from './Invitation.module.scss';
+import Offer from "./Offer";
+
+
 
 const http = axios.create({ baseURL: host});
 
@@ -44,6 +47,14 @@ export default function Invitation(){
         invitation.SubmitTime ? <h2>You have already submitted your offer for this tender</h2> :
       <>
         <div className={style.invitation} dangerouslySetInnerHTML={{__html: invitation.tender.InvitationText}}></div>
+        <div> 
+          <h2>Submit Your Offer</h2>
+          <div className={style.offers}>
+            {invitation.tender.tender_products.map((offer, index) => {
+              return <Offer item={offer} currency={invitation.tender.Cur} />
+            })}
+          </div>
+        </div>
       </>}
     </div>
   );
