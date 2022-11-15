@@ -19,12 +19,14 @@ interface tender {
   tender_products: tender_product[],
 }
 
-interface tender_product {
+export interface tender_product {
   IdCommodityProduct: string, 
   formula: string,
   publication: string, 
-  Product: string, 
+  product: string, 
   offer_type: string[],
+  PercentageInput: number,
+  AmountInput: number,
 }
 
 interface customer {
