@@ -1,5 +1,5 @@
 export default interface invitation {
-  SubmitTime: Date, 
+  SubmitTime?: Date | null, 
   IdTenderInvitation: number, 
   SendTime: Date, 
   FirstVisitTime: Date,
@@ -9,7 +9,7 @@ export default interface invitation {
   customer: customer,
 }
 
-interface tender {
+export interface tender {
   TenderNo: string, 
   Subject: string, 
   ClosingDate: Date, 
@@ -19,14 +19,25 @@ interface tender {
   tender_products: tender_product[],
 }
 
-interface tender_product {
+export interface tender_product {
+  IdTenderProduct: number,
   IdCommodityProduct: string, 
   formula: string,
   publication: string, 
-  Product: string, 
+  product: string, 
   offer_type: string[],
+  PercentageInput: number,
+  AmountInput: number,
+  offer: offer,
+}
+
+export interface offer {
+  Qty?: string,
+  Price?: string,
+  PlusMinusPercent?: string,
+  PlusMinusAmount?: string,
 }
 
 interface customer {
-  title: string,
+  Title: string,
 }
