@@ -1,14 +1,43 @@
 .invitation {
   padding: 5%;
-  max-width: 750px;
+  max-width: 850px;
   margin: 0 auto;
   text-align: left;
+}
+
+.your_offer {
+  padding: 5%;
+  max-width: 850px;
+  margin: auto;
 }
 
 .offers {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
+}
+
+.btn {
+  background-color: white;
+  width: 200px;
+  height: 50px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid #7711b1;
+  color: #7711b1;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: #7711b1;
+  color: white;
+}
+
+.customer {
+  border-bottom: solid 1px #7711b1;
+  color: #7711b1;
+  padding-bottom: 20px;
 }
